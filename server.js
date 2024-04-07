@@ -1,12 +1,13 @@
-const returnEvenArr = (array) => {
-  let store = [];
-  for (let ele of array) {
-    if (ele % 2 == 0) {
-      store.push(ele);
-    }
-  }
-  return store;
-};
+// closure conncept in javascript
 
-const arr = [1, 41, 2, 3, 9, 4, 5, 6];
-console.log("first", returnEvenArr(arr));
+// A cloure is a  feature where an inner fuction has access to the outer function variable.
+
+function outerFunc(outer) {
+  return function innerFunc(inner) {
+    console.log("outerVariable", outer);
+    console.log("innerVariable", outer);
+  };
+}
+const newFunc = outerFunc("varible");
+
+newFunc("inside");
